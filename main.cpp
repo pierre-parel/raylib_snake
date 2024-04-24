@@ -20,6 +20,7 @@ bool toUpdateSnake(double interval) {
 void reset() {}
 
 class Fruit {
+  // FIX: Can spawn inside snake body
 public:
   Vector2 pos = {0, 0};
 
@@ -143,6 +144,7 @@ int main() {
     snake.collidedWithWall(score, fruit);
     snake.collidedWithSelf(score, snake);
 
+    // TODO: Scale interval depending on score
     if (toUpdateSnake(0.2)) {
       snake.update(direction);
     }
